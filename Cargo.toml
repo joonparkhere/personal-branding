@@ -1,0 +1,16 @@
+[package]
+name = "personal_branding"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+yew = "0.20.0"
+yew-router = "0.17.0"
+stylist = { vesrion = "0.11.0", features = ["yew_integration", "yew_use_style"]}
+
+[[bin]]
+name = "personal_branding"
+required-features = ["yew/csr"]
