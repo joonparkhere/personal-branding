@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Yew App</title>
     <base data-trunk-public-url />
-    <link data-trunk rel="rust" data-cargo-features="yew/csr" data-bin="personal_branding" />
+<!--    <link data-trunk rel="rust" data-bin="personal_branding" data-cargo-features="yew/csr" />-->
+    <link data-trunk rel="rust" data-bin="personal_branding_hydrate" data-cargo-features="hydration" />
+
+    <title>Yew App</title>
 </head>
 <body>
 

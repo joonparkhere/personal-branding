@@ -1,5 +1,5 @@
 pub use personal_branding::*;
 
 fn main() {
-    yew::Renderer::<CounterApp>::new().render();
+    yew::Renderer::<App>::new().render();
 }
