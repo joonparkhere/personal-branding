@@ -1,20 +1,24 @@
 use yew::prelude::*;
-use stylist::yew::use_style;
+use yew_router::hooks::use_navigator;
 
-#[function_component]
-pub fn NotFound() -> Html {
-    let style = use_style!(r#"
-        color: red;
-    "#);
+use crate::components::error_template::ErrorTemplate;
+use crate::Route;
+
+#[function_component(NotFound)]
+pub fn not_found() -> Html {
+    let navigator = use_navigator().unwrap();
+
+    let on_button_click = Callback::from(move |_| {
+        navigator.push(&Route::Home);
+    });
 
     html! {
         <>
-            <h1>
-                { "Page not found" }
-            </h1>
-            <div class={style}>
-                { "Page page does not seem to exist" }
-            </div>
+            <ErrorTemplate
+                message={"Not Thing!"}
+                button_text={"Go Home"}
+                {on_button_click}
+            />
         </>
     }
 }

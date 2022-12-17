@@ -7,6 +7,8 @@ use crate::pages::not_found::NotFound;
 
 #[derive(Routable, Eq, PartialEq, Clone, Debug)]
 pub enum Route {
+    #[at("/")]
+    Home,
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -14,7 +16,8 @@ pub enum Route {
 
 fn switch(routes: Route) -> Html {
     match routes {
-        Route::NotFound => html! { <NotFound /> },
+        Route::Home => html! {},
+        Route::NotFound => html! ( <NotFound /> ),
     }
 }
 

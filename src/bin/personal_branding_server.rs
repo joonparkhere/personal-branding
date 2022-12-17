@@ -1,22 +1,22 @@
-use std::collections::HashMap;
-use std::convert::Infallible;
-use std::future::Future;
-use std::path::PathBuf;
 use axum::body::{Body, StreamBody};
 use axum::error_handling::HandleError;
 use axum::extract::Query;
+use axum::handler::Handler;
 use axum::http::{Request, StatusCode};
 use axum::response::IntoResponse;
 use axum::routing::get;
 use axum::{Extension, Router};
-use axum::handler::Handler;
 use clap::Parser;
 use futures::stream::{self, StreamExt};
 use hyper::server::Server;
+use personal_branding::{ServerApp, ServerAppProps};
+use std::collections::HashMap;
+use std::convert::Infallible;
+use std::future::Future;
+use std::path::PathBuf;
 use tower::ServiceExt;
 use tower_http::services::ServeDir;
 use yew::platform::Runtime;
-use personal_branding::{ServerApp, ServerAppProps};
 
 #[derive(Default, Clone)]
 struct Executor {
@@ -85,16 +85,16 @@ async fn main() {
         .route("/api/test", get(|| async move { "Hello World" }))
         .fallback(HandleError::new(
             ServeDir::new(options.dir)
-                    .append_index_html_on_directories(false)
-                    .fallback(
-                        render
-                            .layer(Extension((
-                                index_html_before.clone(),
-                                index_html_after.clone(),
-                            )))
-                            .into_service()
-                            .map_err(|err| -> std::io::Error { match err {} }),
-                    ),
+                .append_index_html_on_directories(false)
+                .fallback(
+                    render
+                        .layer(Extension((
+                            index_html_before.clone(),
+                            index_html_after.clone(),
+                        )))
+                        .into_service()
+                        .map_err(|err| -> std::io::Error { match err {} }),
+                ),
             handle_error,
         ));
 
