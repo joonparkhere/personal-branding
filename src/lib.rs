@@ -1,6 +1,6 @@
 mod app;
+mod modules;
 mod components;
 mod pages;
-mod services;
 
 pub use app::*;
