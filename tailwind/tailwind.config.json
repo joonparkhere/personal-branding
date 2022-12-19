@@ -1,0 +1,12 @@
+{
+  "content": [
+    "./**/*.go",
+    "./index.html",
+    "./**/*.html",
+    "./**/*.css"
+  ],
+  "theme": {
+    "extend": {}
+  },
+  "plugins": []
+}
