@@ -17,7 +17,7 @@ pub fn not_found() -> Html {
             <ErrorTemplate
                 message={"Not Thing!"}
                 button_text={"Go Home"}
-                {on_button_click}
+                on_button_click={on_button_click}
             />
         </>
     }

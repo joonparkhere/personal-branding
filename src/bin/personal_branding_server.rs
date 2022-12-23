@@ -9,7 +9,7 @@ use axum::{Extension, Router};
 use clap::Parser;
 use futures::stream::{self, StreamExt};
 use hyper::server::Server;
-use personal_branding::{ServerApp, ServerAppProps};
+use personal_branding::{SSRApp, SSRAppProps};
 use std::collections::HashMap;
 use std::convert::Infallible;
 use std::future::Future;
@@ -47,7 +47,7 @@ async fn render(
 ) -> impl IntoResponse {
     let url = url.uri().to_string();
 
-    let renderer = yew::ServerRenderer::<ServerApp>::with_props(move || ServerAppProps {
+    let renderer = yew::ServerRenderer::<SSRApp>::with_props(move || SSRAppProps {
         url: url.into(),
         queries,
     });

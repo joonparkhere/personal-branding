@@ -6,7 +6,72 @@
         "./src/**/*.css"
     ],
     "theme": {
-        "extend": {}
+        "colors": {
+            "transparent": {
+                "bg": "none",
+                "text": "#9223C1",
+                "hover": "#E4BBF5"
+            },
+            "violet": {
+                "50": "#FBF3FF",
+                "100": "#E4BBF5",
+                "200": "#C77EE6",
+                "300": "#BA5FE1",
+                "400": "#AD41DB",
+                "500": "#9F27D2",
+                "600": "#9223C1",
+                "700": "#711C96",
+                "800": "#5B1678",
+                "900": "#44105A",
+                "bg": "#9223C1",
+                "text": "#FFFFFF",
+                "hover": "#9F27D2"
+            },
+            "lightGray": {
+                "bg": "#E9ECEF",
+                "text": "#495057",
+                "hover": "#F1F3F5"
+            },
+            "gray": {
+                "50": "#F8F9FA",
+                "100": "#F1F3F5",
+                "200": "#E9ECEF",
+                "300": "#DEE2E6",
+                "400": "#CED4DA",
+                "500": "#ADB5BD",
+                "600": "#868E96",
+                "700": "#495057",
+                "800": "#343A40",
+                "900": "#212529",
+                "bg": "#868E96",
+                "text": "#FFFFFF",
+                "hover": "#ADB5BD"
+            },
+            "darkGray": {
+                "bg": "#343A40",
+                "text": "#FFFFFF",
+                "hover": "#ADB5BD"
+            },
+            "red": {
+                "50": "#fff5f5",
+                "100": "#ffe3e3",
+                "200": "#ffc9c9",
+                "300": "#ffa8a8",
+                "400": "#ff8787",
+                "500": "#ff6b6b",
+                "600": "#fa5252",
+                "700": "#f03e3e",
+                "800": "#e03131",
+                "900": "#c92a2a",
+                "bg": "#ff6b6b",
+                "text": "#FFFFFF",
+                "hover": "#ff8787"
+            },
+            "primary": "rgb(var(--color-primary) / 1)"
+        },
+        "extend": {
+            "colors": {}
+        }
     },
     "plugins": []
 }

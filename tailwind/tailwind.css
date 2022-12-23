@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-primary: 255 115 179;
+    }
+}
+
+.light {
+    --color-bg-primary: #ffc;
+    --color-bg-secondary: #edf;
+    --color-text-primary: #2d3748;
+    --color-text-secondary: #4a5599;
+    --color-text-accent: #2b6cb0;
+}
+
+.dark {
+    --color-bg-primary: #2d3748;
+    --color-bg-secondary: #283141;
+    --color-text-primary: #f7fafc;
+    --color-text-secondary: #efa;
+    --color-text-accent: #81e6d9;
+}

@@ -21,8 +21,8 @@ fn switch(routes: Route) -> Html {
     }
 }
 
-#[function_component]
-pub fn App() -> Html {
+#[function_component(CSRApp)]
+pub fn csr_app() -> Html {
     html! (
         <BrowserRouter>
             <main>
@@ -33,13 +33,13 @@ pub fn App() -> Html {
 }
 
 #[derive(Properties, Eq, PartialEq, Debug)]
-pub struct ServerAppProps {
+pub struct SSRAppProps {
     pub url: AttrValue,
     pub queries: HashMap<String, String>,
 }
 
-#[function_component]
-pub fn ServerApp(props: &ServerAppProps) -> Html {
+#[function_component(SSRApp)]
+pub fn ssr_app(props: &SSRAppProps) -> Html {
     let history = AnyHistory::from(MemoryHistory::new());
     history
         .push_with_query(&*props.url, &props.queries)

@@ -1,5 +1,5 @@
-use personal_branding::App;
+use personal_branding::CSRApp;
 
 fn main() {
-    yew::Renderer::<App>::new().hydrate();
+    yew::Renderer::<CSRApp>::new().hydrate();
 }

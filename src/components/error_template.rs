@@ -1,9 +1,11 @@
 use yew::prelude::*;
 
+use crate::components::rectangle_button::{RectangleButton, Size};
+
 #[derive(Properties, Clone, PartialEq, Debug)]
 pub struct Props {
-    pub message: String,
-    pub button_text: String,
+    pub message: AttrValue,
+    pub button_text: AttrValue,
     pub on_button_click: Callback<MouseEvent>,
 }
 
@@ -21,9 +23,9 @@ pub fn error_template(props: &Props) -> Html {
                 {message}
             </div>
             <div class="mt-8">
-                <button onclick={on_button_click}>
+                <RectangleButton size={Size::Large} on_click={on_button_click}>
                     {button_text}
-                </button>
+                </RectangleButton>
             </div>
         </div>
     }
