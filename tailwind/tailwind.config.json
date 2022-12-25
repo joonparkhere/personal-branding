@@ -69,6 +69,14 @@
             },
             "primary": "rgb(var(--color-primary) / 1)"
         },
+        "screens": {
+            "2xl": {"max": "1920px"},
+            "xl": {"max": "1440px"},
+            "lg": {"max": "1200px"},
+            "md": {"max": "1024px"},
+            "sm": {"max": "768px"},
+            "xs": {"max": "375px"}
+        },
         "extend": {
             "colors": {}
         }

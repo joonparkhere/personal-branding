@@ -7,10 +7,7 @@ use crate::Route;
 #[function_component(NotFound)]
 pub fn not_found() -> Html {
     let navigator = use_navigator().unwrap();
-
-    let on_button_click = Callback::from(move |_| {
-        navigator.push(&Route::Home);
-    });
+    let on_button_click = Callback::from(move |_| navigator.push(&Route::Home));
 
     html! {
         <>
