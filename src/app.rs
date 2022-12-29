@@ -3,7 +3,7 @@ use yew::prelude::*;
 use yew_router::history::{AnyHistory, History, MemoryHistory};
 use yew_router::prelude::*;
 
-use crate::components::fixed_header::FixedHeader;
+use crate::pages::home::Home;
 use crate::pages::not_found::NotFound;
 
 #[derive(Routable, Eq, PartialEq, Clone, Debug)]
@@ -17,7 +17,7 @@ pub enum Route {
 
 fn switch(route: Route) -> Html {
     match route {
-        Route::Home => html! { <FixedHeader /> },
+        Route::Home => html! { <Home /> },
         Route::NotFound => html! ( <NotFound /> ),
     }
 }
@@ -26,9 +26,7 @@ fn switch(route: Route) -> Html {
 pub fn csr_app() -> Html {
     html! (
         <BrowserRouter>
-            <main>
-                <Switch<Route> render={switch} />
-            </main>
+            <Switch<Route> render={switch} />
         </BrowserRouter>
     )
 }
@@ -48,9 +46,7 @@ pub fn ssr_app(props: &SSRAppProps) -> Html {
 
     html! (
         <Router history={history}>
-            <main>
-                <Switch<Route> render={switch} />
-            </main>
+            <Switch<Route> render={switch} />
         </Router>
     )
 }
