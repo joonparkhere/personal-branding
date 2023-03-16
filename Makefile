@@ -1,5 +1,5 @@
 TAILWIND_DIR := tailwind
-TAILWIND_EXEC := tailwindcss-macos-arm64
+TAILWIND_EXEC := tailwindcss-linux-x64
 TAILWIND_CONFIG := tailwind.config.json
 TAILWIND_INPUT := tailwind.css
 TAILWIND_OUT := index.css

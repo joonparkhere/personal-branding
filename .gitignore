@@ -1,13 +1,8 @@
+/.idea
 /target
 /dist
 
-/node_modules
-
-Cargo.lock
-package-lock.json
-
 **/*.rs.bk
 
-/.idea
-
+Cargo.lock
 index.css
